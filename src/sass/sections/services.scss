@@ -1,10 +1,8 @@
 .titles {
+  @include font(24px, 400, 50px);
   color: $secondary-text-color;
   font-family: 'Kaushan Script';
-  font-size: 24px;
-  font-weight: 400;
   text-align: center;
-  line-height: 50px;
   padding-bottom: 64px;
 
   &::after {
@@ -19,10 +17,9 @@
 }
 
 .titles-second {
+  @include font(30px, 700);
   color: $secondary-text-color;
   font-family: $main-font;
-  font-size: 30px;
-  font-weight: 700;
   text-transform: uppercase;
   display: block;
 }
@@ -34,35 +31,25 @@
 
 .services {
   &__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
+    @extend %flexbox;
+
     flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
   &__item {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 360px;
 
     &_title {
+      @extend %font-base;
       color: $secondary-text-color;
-      font-family: $main-font;
-      font-size: 14px;
-      font-weight: 400;
+
       text-transform: uppercase;
       padding-bottom: 22px;
     }
     &_description {
+      @include font(15px, 400, 24px);
       color: $third-text-color;
       font-family: $secondary-font;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 24px;
     }
 
     &:nth-of-type(-n + 3) {
